@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: -webkit-linear-gradient(#0f52ce, #baa1c49c, #d80e0e);
 }
 
 .container-grille {
@@ -18,15 +19,25 @@ body {
 
 header {
     grid-column: span 3;
-    padding: 30px;
+    padding: 33px;
     text-align: center;
-    font-size: 22px;
-    background-color: #17BEBB;
-    color: #fff;
+    font-size: 33px;
+    background: -webkit-linear-gradient(#d80e0e, #baa1c49c, #0f52ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
 }
 
 nav {
-    background-color: #EF3E36;
+    background-color: #993333;
+    background: -webkit-linear-gradient(#d80e0e, #baa1c49c, #0f52ce);
+    border-radius: 0px 100px / 120px ;
+    
+    
 }
 .liste-sidenav {
     list-style-type: none;
@@ -58,7 +69,9 @@ h1 {
 
 aside {
     padding: 20px;
-    background-color: #edb88b;
+    /* background-color: #edb88b; */
+    background: -webkit-linear-gradient(#d80e0e, #baa1c49c, #0f52ce);
+    border-radius: 100px 0px / 120px;
     font-size: 22px;
     color: #333;
 }
