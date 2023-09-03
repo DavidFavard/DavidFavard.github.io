@@ -1,217 +1,39 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-@font-face {
-  font-family: "yatra";
-  src: url(./font/YatraOne-Regular.ttf);
-}
-
-  @font-face {
-    font-family: "blanka";
-    src: url(./font/Blanka-Regular.otf);
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.gradient {
+  --size: 250px;
+  --speed: 7s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background-image: linear-gradient(rgba(196, 153, 13, 0.85), #e60c0c);
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+}
 
+@media (min-width: 720px) {
+  .gradient {
+    --size: 500px;
+  }
+}
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    /* margin: 0; */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* bg derriere attention mode OFF */
-/* .accueil {
-    height: 100%;
-    width: 100%;
-    background: url(./img/#);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-h1 {
-    position: relative;
-    font-family: "yatra" ;
-    font-size: 80px;
-    font-weight: bold;
-    color: #246092;
-    bottom: -17%;
-}
-
-h2 {
-    position: relative;
-    font-size: 112px;
-    color: #183d4d;
-    bottom: -32.3%;
-}
-
-h3 {
-  position: relative;
-  font-size: 90px;
-  color: #517686;
-  bottom: -21.2%;
-}
-
-/* loader */
-
-.loader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* background-color: #0a0a0a; */
-    background-image: url(./img/magicWEB.jpg);
-    background-size: cover;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
-.lettre {
-    font-family: "yatra" ;
-    color: #484848;
-    font-size: 55px;
-    letter-spacing: 33px;
-    margin-bottom: 300px;
-    padding-top: 70%;
-    animation: flash 1.2s linear infinite;
-}
-@keyframes flash {
-    0% {
-        color: #246092;
-        text-shadow: 0 0 7px #e4e4db;
-    }
-    90% {
-        color: #484848;
-        text-shadow: none;
-    }
-    100% {
-        color: #1085e6;
-        text-shadow: 0 0 7px #fff900;
-    }
-}
-
-.lettre:nth-child(1){
-    animation-delay: 0.1s;
-}
-.lettre:nth-child(2){
-    animation-delay: 0.2s;
-}
-.lettre:nth-child(3){
-    animation-delay: 0.3s;
-}
-.lettre:nth-child(4){
-    animation-delay: 0.4s;
-}
-.lettre:nth-child(5){
-    animation-delay: 0.5s;
-}
-.lettre:nth-child(6){
-    animation-delay: 0.6s;
-}
-.lettre:nth-child(7){
-    animation-delay: 0.7s;
-}
-.lettre:nth-child(8){
-    animation-delay: 0.8s;
-}
-/* 8 ou plus */
-.lettre:nth-child(9){
-    animation-delay: 0.9s;
-}
-.lettre:nth-child(10){
-    animation-delay: 1s;
-}
-
-.fondu-out {
-    opacity: 0;
-    transition: opacity 0.4s ease-out;
-}
-
- /* Anima HELLO WORLD */
-
-.funky-container {
-  /* display: inline-block; */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-
-.funky-base,
-.funky-letter {
-    font-size: 100px;
-    color: transparent;
-    font-weight: bold;
-}
-
-
-.funky-letter {
-  font-family: "blanka";
+  background-color: #222;
   position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-animation: funky 1.5s ease-in-out infinite;
-          animation: funky 1.5s ease-in-out infinite;
-  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222, 4px 4px 0 rgba(0, 0, 0, 0.2);
+  inset: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-@-webkit-keyframes funky {
-  50% {
-    transform: translateY(50px);
-  }
+/* This is just to transition when you change the viewport size. */
+* {
+  transition: all 0.25s ease-out;
 }
-
-@keyframes funky {
-  50% {
-    transform: translateY(50px);
-  }
-}
-.fl-1 {
-  -webkit-animation-delay: -0.1s;
-          animation-delay: -0.1s;
-  color: #215672;
-}
-
-.fl-2 {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
-  color: #7b909a;
-}
-
-.fl-3 {
-  -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s;
-  color: #cde4ef;
-}
-
-.fl-4 {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
-  color: rgb(12, 12, 12);
-}
-
-.fl-5 {
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
-  color: #143046;
-}
-
-.fl-6 {
-  -webkit-animation-delay: -0.6s;
-          animation-delay: -0.6s;
-  color: #122b39;
-}
-
-.fl-7 {
-  -webkit-animation-delay: -0.7s;
-          animation-delay: -0.7s;
-  color: #e6dbdb;
-}
-/* # sourceMappingURL=style.css.map mode OFF */
